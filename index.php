@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -15,6 +19,12 @@
   <body>
     <div class="container">
         <h1>Cadastrar Data</h1>
+        <?php
+        if(isset($_SESSION['msg'])){
+            echo $_SESSION['msg'];
+            unset($_SESSION['msg']);
+        }
+        ?>
         <form class="form-horizontal" action="processa.php" method="post">
             <div class="form-group">
                 <label for="estabelecimento'" class="col-sm-2 control-label">Estabelecimento</label>
@@ -25,7 +35,7 @@
             <div class="form-group">
                 <label for="data" class="col-sm-2 control-label">Data e Hora</label>
                 <div class="col-sm-10">
-                    <div class="input-group date data data_formato"  data-date-format="dd-mm-yyyy HH:ii:ss">
+                    <div class="input-group date data data_formato"  data-date-format="dd/mm/yyyy HH:ii:ss">
                         <input class="form-control" size="16" type="text" name="data" placeholder ="Data da visita">
                         <span class="input-group-addon">
                              <span class="glyphicon glyphicon-th" ></span> 
