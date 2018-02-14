@@ -18,7 +18,9 @@
   </head>
   <body>
     <div class="container">
-        <h1>Cadastrar Data</h1>
+        <a href="lista.php">Lista</a>
+        <h1 class="text-center">Cadastrar Data</h1>
+       <hr>
         <?php
         if(isset($_SESSION['msg'])){
             echo $_SESSION['msg'];
